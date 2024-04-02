@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+    /*daoJDBC - статическая, потому что в ином случае тесты ломаются
+     * — команда "DROP TABLE" не срабатывает и таблица не удаляется
+     */
     private static UserDaoJDBCImpl daoJDBC = null;
     public void createUsersTable() {
         if(daoJDBC == null) {
